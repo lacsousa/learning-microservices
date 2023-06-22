@@ -1,4 +1,4 @@
-package br.com.aluraifood.model;
+package br.com.alurafood.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

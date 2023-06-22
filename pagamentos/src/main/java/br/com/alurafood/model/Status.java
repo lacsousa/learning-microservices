@@ -1,4 +1,4 @@
-package br.com.aluraifood.model;
+package br.com.alurafood.model;
 
 public enum Status {
     CRIADO,
