@@ -1,9 +1,9 @@
-package br.com.alurafood.service;
+package br.com.alurafood.pagamentos.service;
 
-import br.com.alurafood.dto.PagamentoDto;
-import br.com.alurafood.model.Pagamento;
-import br.com.alurafood.model.Status;
-import br.com.alurafood.repository.PagamentoRepository;
+import br.com.alurafood.pagamentos.dto.PagamentoDto;
+import br.com.alurafood.pagamentos.model.Pagamento;
+import br.com.alurafood.pagamentos.model.Status;
+import br.com.alurafood.pagamentos.repository.PagamentoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

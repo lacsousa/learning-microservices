@@ -1,7 +1,7 @@
-package br.com.alurafood.controller;
+package br.com.alurafood.pagamentos.controller;
 
-import br.com.alurafood.dto.PagamentoDto;
-import br.com.alurafood.service.PagamentoService;
+import br.com.alurafood.pagamentos.dto.PagamentoDto;
+import br.com.alurafood.pagamentos.service.PagamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -43,7 +43,7 @@ public class PagamentoController {
         return ResponseEntity.created(endereco).body(pagamentoDto);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<PagamentoDto> atualizar(@PathVariable @NotNull Long id, @RequestBody @Valid PagamentoDto dto){
 
         PagamentoDto pagamentoDto = service.atualizarPagamento(id, dto);
@@ -51,7 +51,7 @@ public class PagamentoController {
         return ResponseEntity.ok(pagamentoDto);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<PagamentoDto> remover(@PathVariable @NotNull Long id){
         service.excluirPagamento(id);
 

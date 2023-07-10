@@ -1,4 +1,4 @@
-package br.com.alurafood.model;
+package br.com.alurafood.pagamentos.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
