@@ -1,5 +1,16 @@
 Some util information
 
+
+
+
+Config Git logline
+
+git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+git logline
+
+
+--------------------
 for running in apps that test API like insomnia or Postman
 
 - POST: http://localhost:8080/pagamentos
@@ -13,7 +24,20 @@ Body:
     "expiracao": "10/29",
     "codigo": "123",
     "pedidoId": 1,
-    "formaDePagamentoId": 1}
+    "formaDePagamentoId": 1
+ }
+
+
+{
+    "valor": 150,
+    "nome": "Lívian",
+    "numero": "55555",
+    "expiracao": "05/31",
+    "codigo": "456",
+    "pedidoId": 2,
+    "formaDePagamentoId": 1
+ }
+
 
  - PUT: http://localhost:8080/pagamentos/2
 

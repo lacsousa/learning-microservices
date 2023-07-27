@@ -1,0 +1,27 @@
+Some util information
+
+for running in apps that test API like insomnia or Postman
+
+- POST: http://localhost:8080/pedidos
+
+Body:
+
+{
+    "itens": [
+    {
+        "quantidade": 10,
+        "descrição": "Coca-cola"
+    },
+    {
+        "quantidade": 5,
+        "descrição": "Mc Chicken"
+    }
+    ]
+}
+
+ - PUT: http://localhost:8080/pedidos/2
+
+ {
+     ,
+ 	  "status": "CRIADO"
+ }
