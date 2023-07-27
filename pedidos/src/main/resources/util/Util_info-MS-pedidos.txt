@@ -19,6 +19,19 @@ Body:
     ]
 }
 
+{
+    "itens": [
+    {
+        "quantidade": 10,
+        "descrição": "Guaraná"
+    },
+    {
+        "quantidade": 2,
+        "descrição": "Wraps"
+    }
+    ]
+}
+
  - PUT: http://localhost:8080/pedidos/2
 
  {
