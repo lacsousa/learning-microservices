@@ -13,7 +13,7 @@ git logline
 --------------------
 for running in apps that test API like insomnia or Postman
 
-- POST: http://localhost:8080/pagamentos
+- POST: http://localhost:8082/pagamentos-ms/pagamentos
 
 Body:
 
@@ -39,7 +39,7 @@ Body:
  }
 
 
- - PUT: http://localhost:8080/pagamentos/2
+ - PUT: http://localhost:8082/pagamentos-ms/pagamentos/2
 
  {
      "valor": 279,

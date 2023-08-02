@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="pagamentos")
+@Table(name = "pagamentos")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 public class Pagamento {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -53,4 +53,6 @@ public class Pagamento {
 
     @NotNull
     private Long formaDePagamentoId;
+
+
 }

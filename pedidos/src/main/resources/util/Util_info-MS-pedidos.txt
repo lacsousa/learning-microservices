@@ -2,7 +2,7 @@ Some util information
 
 for running in apps that test API like insomnia or Postman
 
-- POST: http://localhost:8080/pedidos
+- POST: http://localhost:8082/pedidos-ms/pedidos
 
 Body:
 
@@ -10,16 +10,16 @@ Body:
     "itens": [
     {
         "quantidade": 10,
-        "descrição": "Coca-cola"
+        "descricao": "Coca-cola"
     },
     {
         "quantidade": 5,
-        "descrição": "Mc Chicken"
+        "descricao": "Mc Chicken"
     }
     ]
 }
 
- - PUT: http://localhost:8080/pedidos/2
+ - PUT: http://localhost:8082/pedidos-ms/pedidos/2
 
  {
      ,

@@ -22,39 +22,36 @@ public class PagamentoController {
     private PagamentoService service;
 
     @GetMapping
-    public Page<PagamentoDto> listar(@PageableDefault(size = 10)Pageable paginacao){
+    public Page<PagamentoDto> listar(@PageableDefault(size = 10) Pageable paginacao) {
         return service.obterTodos(paginacao);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PagamentoDto> detalhar(@PathVariable @NotNull Long id){
+    public ResponseEntity<PagamentoDto> detalhar(@PathVariable @NotNull Long id) {
         PagamentoDto dto = service.obterPorId(id);
 
         return ResponseEntity.ok(dto);
     }
 
+
     @PostMapping
-    public ResponseEntity<PagamentoDto> cadastrar(@RequestBody @Valid PagamentoDto dto,
-                                                  UriComponentsBuilder uriBuider){
-        PagamentoDto pagamentoDto = service.criarPagamento(dto);
+    public ResponseEntity<PagamentoDto> cadastrar(@RequestBody @Valid PagamentoDto dto, UriComponentsBuilder uriBuilder) {
+        PagamentoDto pagamento = service.criarPagamento(dto);
+        URI endereco = uriBuilder.path("/pagamentos/{id}").buildAndExpand(pagamento.getId()).toUri();
 
-        URI endereco = uriBuider.path("/pagamentos/{id}").buildAndExpand(pagamentoDto.getId()).toUri();
-
-        return ResponseEntity.created(endereco).body(pagamentoDto);
+        return ResponseEntity.created(endereco).body(pagamento);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PagamentoDto> atualizar(@PathVariable @NotNull Long id, @RequestBody @Valid PagamentoDto dto){
-
-        PagamentoDto pagamentoDto = service.atualizarPagamento(id, dto);
-
-        return ResponseEntity.ok(pagamentoDto);
+    public ResponseEntity<PagamentoDto> atualizar(@PathVariable @NotNull Long id, @RequestBody @Valid PagamentoDto dto) {
+        PagamentoDto atualizado = service.atualizarPagamento(id, dto);
+        return ResponseEntity.ok(atualizado);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PagamentoDto> remover(@PathVariable @NotNull Long id){
+    public ResponseEntity<PagamentoDto> remover(@PathVariable @NotNull Long id) {
         service.excluirPagamento(id);
-
         return ResponseEntity.noContent().build();
     }
+
 }
