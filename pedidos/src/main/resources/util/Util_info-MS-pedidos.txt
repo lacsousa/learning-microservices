@@ -25,3 +25,9 @@ Body:
      ,
  	  "status": "CRIADO"
  }
+
+   -- Command line to run the microservice
+ & "C:\Users\CYFT\Documents\Luciano\MatPesq\Alura\microserviços\learning-microservices\pedidos\mvnw.cmd" spring-boot:run -f "C:\Users\CYFT\Documents\Luciano\MatPesq\Alura\microserviços\learning-microservices\pedidos\pom.xml"
+
+
+
