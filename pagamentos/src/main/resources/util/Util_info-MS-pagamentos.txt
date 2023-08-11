@@ -48,3 +48,25 @@ Body:
      "formaDePagamentoId": 1,
  	  "status": "CRIADO"
  }
+
+ -----------------
+
+ * A utilizar o Open Feign do Spring Cloud para conseguir projetar a comunicação síncrona entre microsserviços;
+
+ * Implementar no serviço de pagamentos uma requisição do tipo PUT para o serviço de pedidos, para informar que o pedido
+  foi pago corretamente;
+
+ * O conceito de circuit breaker, que interrompe um chamado a um serviço quando as requisições com falha de comunicação
+ atingirem um número específico;
+
+ * A implementar o fallback, que é a forma com que um microsserviço vai tratar a falha de comunicação, ou seja,
+ uma estratégia para que a inoperabilidade de um serviço não afete o outro.
+
+ ** Você desenvolveu um microsserviço de pagamentos do zero, criando controlador, modelos,
+ dto (data transfer object), repository, conectou sua aplicação a um banco de dados MySQL,
+ utilizou uma arquitetura fazendo service discovery, centralizando requisições através de um API Gateway,
+ fazendo balanceamento de carga e ainda implementou comunicação síncrona usando ferramentas do Spring Cloud,
+ além de projetar conceitos de circuit breaker e fallback para prevenir falhas ou inoperabilidade em algum dos microsserviços.
+ 
+
+  -----------------

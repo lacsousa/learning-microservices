@@ -36,7 +36,10 @@ public class PagamentoService {
         Pagamento pagamento = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException());
 
-        return modelMapper.map(pagamento, PagamentoDto.class);
+        PagamentoDto dto = modelMapper.map(pagamento, PagamentoDto.class);
+        dto.setItens(pedidoClient.obterItensDoPedido(pagamento.getPedidoId()).getItens());
+
+        return dto;
     }
 
     public PagamentoDto criarPagamento(PagamentoDto dto) {
@@ -70,5 +73,15 @@ public class PagamentoService {
         pedidoClient.atualizaPagamento(pagamento.get().getPedidoId());
     }
 
+    public void alteraStatus(Long id) {
+        Optional<Pagamento> pagamento = repository.findById(id);
+
+        if (!pagamento.isPresent()){
+            throw new EntityNotFoundException();
+        }
+
+        pagamento.get().setStatus(Status.CONFIRMADO_SEM_INTEGRACAO);
+        repository.save(pagamento.get());
+    }
 }
 
